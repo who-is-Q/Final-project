@@ -44,6 +44,10 @@ class Player(object):
         #pygame.draw.rect(win, (255, 0, 0),(self.x + 40 - self.blood/self.blood_init, 
                                            #self.y + 30, 40 - self.blood/self.blood_init, 8))
 
+def redraw():
+    win.blit(bg, (0, 0)) 
+    win.blit(boss1,(400, 410))
+    player.draw(win)
 
 #load pictures
 pwalk_right = pygame.image.load('Desktop/final project/images/monk tang-r.png')
@@ -52,32 +56,27 @@ pimg = [pwalk_right, pwalk_left]
 
 #start_image = pygame.image.load("Desktop/final project/images/start-bg.jpg")
 
-bg = pygame.image.load('Desktop/final project/images/bg1-1.jpg')
-p_c1 = pygame.image.load('Desktop/final project/images/scene1/f1.jpg')
-p_c2 = pygame.image.load('Desktop/final project/images/scene1/f2.jpg')
+bg = pygame.image.load('Desktop/final project/images/bg1-2.jpg').convert() 
+p_c1 = pygame.image.load('Desktop/final project/images/scene1/another1.jpg')
+p_c2 = pygame.image.load('Desktop/final project/images/scene1/another2.jpg')
+p_c3 = pygame.image.load('Desktop/final project/images/scene1/m8.jpg')
+p_c4 = pygame.image.load('Desktop/final project/images/scene1/m9.jpg')
+p_c5 = pygame.image.load('Desktop/final project/images/scene1/m10.jpg')
+p = [p_c1, p_c2, p_c3, p_c4, p_c5]
 
-p = [p_c1, p_c2]
-
-om = pygame.image.load('Desktop/final project/images/scene1/om.png')
+boss1 = pygame.image.load('Desktop/final project/images/boss1-l.png')
 
 player = Player(200, 410, 64, 64, pimg, Tang = True)
-def redraw():
-    win.blit(bg,(0, 0)) 
-    win.blit(om,(300, 410))
-    player.draw(win)
 
-def scene2():
-    rect = pygame.Rect(130,170,400,410)
+def scene5():
+    rect = pygame.Rect(150,160,400,410)
     run = True
     talk = False
     clock = pygame.time.Clock()
     i = 0
     while run:
         clock.tick(60)
-        #redraw()
-        win.blit(bg, (0, 0)) 
-        win.blit(om,(300, 410))
-        player.draw(win)
+        redraw()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -87,10 +86,9 @@ def scene2():
                     talk = True 
                 i+=1
         if talk:
-            if i<3:
+            if i<6:
                 win.blit(p[i-1],(250,150))
             else:
-                #talk = False
                 run = False
         #check the input from user
         keys = pygame.key.get_pressed()
@@ -122,4 +120,3 @@ def scene2():
                 player.isJump = False
                 player.t = 10
         pygame.display.update()
-

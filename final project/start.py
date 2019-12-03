@@ -27,10 +27,8 @@ strt = True
 def start():
     start_image = pygame.image.load("Desktop/final project/images/start-bg.jpg")
     screen.blit(start_image, (0, 0))
-    
     start_icon = pygame.image.load("Desktop/final project/images/start.png")
     set_icon = pygame.image.load("Desktop/final project/images/set.png")
-   
     start = icons(start_icon,400,500,130,64)
     rect1 = pygame.Rect(400,500,130,64)
     setting = icons(set_icon,600,500,100,64)
@@ -53,5 +51,5 @@ def start():
                 elif rect2.collidepoint(event.pos):
                     strt = False
                     running = False
-                    
         pygame.display.update()
+    return strt

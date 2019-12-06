@@ -1,10 +1,10 @@
 # Final-project
 	REMINDER: Please place the file on the "Desktop", so the program could run.
-		My final program is called the Journey to the West. It is a role play game based on an ancient Chinese novel.
+	    My final program is called the Journey to the West. It is a role play game based on an ancient Chinese novel.
 	The game will be in the form of 2D scroll. And I will use pygame to implement it.
-		The first interface will have a start icon and setting icon. If the player clicks setting, she/he can choose
+	    The first interface will have a start icon and setting icon. If the player clicks setting, she/he can choose
 	the adjust the volume of the background music or turn off the music completely. 
-	If the player clicks on the start icon, she/he can choose to start a new game.As click on the new game button,
+	    If the player clicks on the start icon, she/he can choose to start a new game.As click on the new game button,
 	an instruction would pop up.
 	The player can control the character by pressing keys on keyboard. For example, if pressing “J”, the character
 	will jump; pressing “D”, the character will go right; “A” the character will go left; press "K" or "L", the character
